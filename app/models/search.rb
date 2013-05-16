@@ -10,7 +10,7 @@ class Search
     api_call = call['weeklyartistchart']['artist'].map{|a| { 'name' => a['name'], 'playcount' => a['playcount']}}
     hash = {
       'graph' => {
-        'title' =>"Weekly",
+        'title' =>"Most Played",
         'total' => true,
         'datasequences' => {
            'title' => "Top Artist's for #{user}",
