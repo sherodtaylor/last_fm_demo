@@ -1,15 +1,13 @@
 require 'open-uri'
 class Search
-  attr_accessor :result
   def self.lastfm_api_call(user)
-    api = "5e851473c4eb515d9edf03d0a720bfb9"
-    file = open("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=#{user}&api_key=#{api}&format=json")
+    file = open("http://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=#{user}&api_key=#{ENV['LAST_FM_API']}&format=json")
     JSON.load(file.read)
   end
 
   def self.formatted_code(user)
     call = self.lastfm_api_call(user)
-    api_call = call['topartists']['artist'].map{|a| { 'name' => a['name'], 'playcount' => a['playcount']}}
+    api_call = call['weeklyartistchart']['artist'].map{|a| { 'name' => a['name'], 'playcount' => a['playcount']}}
     hash = {
       'graph' => {
         'title' =>"Most Played",
