@@ -11,7 +11,7 @@ class Search
     api_call = call['topartists']['artist'].map{|a| { 'name' => a['name'], 'playcount' => a['playcount']}}
     hash = {
       'graph' => {
-        'title' => 'topartists',
+        'title' =>"#{user}'s Top Artist's",
         'total' => true,
         'datasequences' =>
           api_call
