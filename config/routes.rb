@@ -1,5 +1,7 @@
 LastFmDemo::Application.routes.draw do
-  match '/statusboard' => 'api#api', :as => :api_call
+  match '/statusboard' => 'api#status_board', :as => :status_board
+  match '/morris' => 'api#morris', :as => :morris
+  root :to => 'api#index', :as => :index
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
