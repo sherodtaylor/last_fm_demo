@@ -13,11 +13,11 @@ class Search
         'title' =>"Weekly",
         'total' => true,
         'xAxis' => { 'showEveryLabel' => true },
-        'datasequences' => {
+        'datasequences' => [
            'title' => "Top Artist's for #{user}",
            'datapoints' =>
               api_call
-        }
+        ]
       }
     }
     hash
