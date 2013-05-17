@@ -12,6 +12,7 @@ class Search
       'graph' => {
         'title' =>"Weekly",
         'total' => true,
+        'xAxis' => { 'showEveryLabel' => true },
         'datasequences' => {
            'title' => "Top Artist's for #{user}",
            'datapoints' =>
