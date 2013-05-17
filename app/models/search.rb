@@ -7,7 +7,7 @@ class Search
 
   def self.formatted_code(user)
     call = self.lastfm_api_call(user)
-    api_call = call['weeklyartistchart']['artist'].map{|a| { 'name' => a['name'], 'playcount' => a['playcount']}}
+    api_call = call['weeklyartistchart']['artist'].map{|a| { 'title' => a['name'], 'value' => a['playcount']}}
     hash = {
       'graph' => {
         'title' =>"Weekly",
