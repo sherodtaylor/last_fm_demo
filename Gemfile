@@ -22,10 +22,13 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'webmock'
-  gem 'simplecov', :require => false
   gem 'sqlite3'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+  gem 'webmock'
 end
 
 
